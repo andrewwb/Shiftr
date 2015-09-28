@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Create A schedule</title>
-  </head>
-  <body>
-    <label>
-      <span>Enter Start of Shift</span>
-      <input ng-model="self.Shift.Start"type="text">
-    </label>
-    <br />
-    <label>
-      <span>Enter End of Shift</span>
-      <input ng-model="self.Shift.End"type="text">
-    </label>
-    <br />
-    <button ngclick="self.AddShift()">Submit</button>
-  </body>
-</html>
+<ion-view title="create">
+  <ion-content>
+    <form ng-submit="self.AddShift(data)" class="list list-inset">
+      <label>
+        <span>Enter Start of Shift</span>
+        <input class="item item-input" ng-model="data.startTime" type="text" placeholder="Start of Shift" />
+      </label>
+
+      <label>
+        <span>Enter End of Shift</span>
+        <input class="item item-input" ng-model="data.endTime"type="text" placeholder="End of Shift" />
+      </label>
+      <input class="button" type="submit" value="New Shift" />
+  </form>
+  </ion-content>
+</ion-view>
