@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var Shiftr = angular.module('Shiftr', ['ionic'])
+var Shiftr = angular.module('Shiftr', ['ionic', 'ngResource'])
   .run(function($ionicPlatform){
     $ionicPlatform.ready(function(){
           //stuff in here
@@ -20,7 +20,7 @@ var Shiftr = angular.module('Shiftr', ['ionic'])
         url: '/create',
         templateUrl: 'Create.html',
         controller: 'ShiftController',
-        controllerAs: 'self'
+        // controllerAs: 'self'
       });
       $urlRouterProvider.otherwise('/');
   });

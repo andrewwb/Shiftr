@@ -1,10 +1,12 @@
 (function(){
   angular
     .module('Shiftr')
-    .controller('ShiftController', function($state){
-      var self = this;
+    .controller('ShiftController', function($scope, shiftService){
+      var self = $scope;
+
       self.AddShift = function(data){
-        console.log('AddShift fired');
+        shiftService.postShift(data);
+        // console.log('AddShift fired');
         console.log(data);
       };
     });

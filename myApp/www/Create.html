@@ -1,6 +1,6 @@
 <ion-view title="create">
   <ion-content>
-    <form ng-submit="self.AddShift(data)" class="list list-inset">
+    <form name="newShift" ng-submit="AddShift(data)" class="list list-inset">
       <label>
         <span>Enter Start of Shift</span>
         <input class="item item-input" ng-model="data.startTime" type="text" placeholder="Start of Shift" />
@@ -10,6 +10,7 @@
         <span>Enter End of Shift</span>
         <input class="item item-input" ng-model="data.endTime"type="text" placeholder="End of Shift" />
       </label>
+      <!-- <button type="submit" class="button" ng-click="AddShift(data)">New Shift</button> -->
       <input class="button" type="submit" value="New Shift" />
   </form>
   </ion-content>
