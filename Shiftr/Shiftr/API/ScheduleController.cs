@@ -8,9 +8,10 @@ using System.Web.Http;
 
 namespace Shiftr.API
 {
-    [Route("api/shift", Name ="ShiftAPI")]
+    [Route("api/shift", Name ="ShiftApi")]
     public class ScheduleController : ApiController
     {
+        
         private IRepository _repo;
         public ScheduleController(IRepository repo) {
             _repo = repo;
@@ -24,6 +25,7 @@ namespace Shiftr.API
             return _repo.Find<Schedule>(id);
         }
 
+        [HttpPost]
         public HttpResponseMessage Post(Shift shift) {
             if (ModelState.IsValid) {
                 if (shift.Id == 0) {
