@@ -11,7 +11,8 @@ namespace Shiftr.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        
+        public int ScheduleFrequency { get; set; } //number of days
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
