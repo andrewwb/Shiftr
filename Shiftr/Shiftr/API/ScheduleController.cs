@@ -5,10 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Shiftr.API
 {
-    [Route("api/shift", Name ="ShiftApi")]
+    [EnableCors(origins: "*", headers:"*", methods:"*")]
     public class ScheduleController : ApiController
     {
         
@@ -25,7 +26,7 @@ namespace Shiftr.API
             return _repo.Find<Schedule>(id);
         }
 
-        [HttpPost]
+        
         public HttpResponseMessage Post(Shift shift) {
             if (ModelState.IsValid) {
                 if (shift.Id == 0) {

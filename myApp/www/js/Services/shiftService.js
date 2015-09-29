@@ -5,9 +5,9 @@
       // return $resource(routeUrls.shiftApi);
       var ShiftApi = $resource(routeUrls.shiftApi);
       //console.log(ShiftApi)
-      this.postShift = function(data){
-        console.log(data);
-        new ShiftApi(data).$save(function(result){
+      this.postShift = function(shift){
+        console.log(shift);
+        new ShiftApi(shift).$save(function(result){
           console.log(result);
         });
       };

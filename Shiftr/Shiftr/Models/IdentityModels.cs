@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace Shiftr.Models
 {
@@ -33,5 +34,7 @@ namespace Shiftr.Models
         {
             return new ApplicationDbContext();
         }
+        public IDbSet<Shift> Shifts { get; set; }
+        public IDbSet<Schedule> Schedules { get; set; }
     }
 }
